@@ -30,15 +30,15 @@
 
   # The results collected from third layer are as follows and return it:
   { bookDetail:
-    [ { dataKey: '題名', dataValue: '神經超音波 / 胡漢華主編; 許弘毅編譯' },
-      { dataKey: '版本項', dataValue: '初版' },
-      { dataKey: '出版項', dataValue: '2017' },
-      { dataKey: '出版項', dataValue: '臺北市 : 力大圖書, 2017.10' },
-      { dataKey: '面數高廣', dataValue: '面 ; 公分' },
-      { dataKey: '國際標準書號', dataValue: '978-986-7364-73-9 平裝 NT' },
-      { dataKey: '標題', dataValue: '超音波學' },
-      { dataKey: '標題', dataValue: '神經系統疾病' } ],
-    library:
+    [ { bookKey: '題名', bookValue: '神經超音波 / 胡漢華主編; 許弘毅編譯' },
+      { bookKey: '版本項', bookValue: '初版' },
+      { bookKey: '出版項', bookValue: '2017' },
+      { bookKey: '出版項', bookValue: '臺北市 : 力大圖書, 2017.10' },
+      { bookKey: '面數高廣', bookValue: '面 ; 公分' },
+      { bookKey: '國際標準書號', bookValue: '978-986-7364-73-9 平裝 NT' },
+      { bookKey: '標題', bookValue: '超音波學' },
+      { bookKey: '標題', bookValue: '神經系統疾病' } ],
+    collection:
     [ { library: '(CIP新書書訊)',
         callNumber: '415.2168 ',
         status: '依各館館藏為準' } ] }
@@ -121,12 +121,12 @@
     bookDetail: object[] or null
     [
       {
-        dataKey: string,
-        dataValue: string
+        bookKey: string,
+        bookValue: string
       },
       { ... }, { ... }, ...
     ],
-    library: object[] or null
+    collection: object[] or null
     [
       {
         library: string,

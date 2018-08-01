@@ -3,11 +3,11 @@
  */
 
 export interface IBookField {
-  dataKey: string;
-  dataValue: string;
+  bookKey: string;
+  bookValue: string;
 }
 
-export interface ILibraryField {
+export interface ICollectionField {
   library: string;
   callNumber: string;
   status: string;
@@ -15,7 +15,7 @@ export interface ILibraryField {
 
 export interface IThirdLayerDataType {
   bookDetail: IBookField[];
-  library: ILibraryField[];
+  collection: ICollectionField[];
 }
 
 const removeAllHtmlTag: Function = (text: string): string => {
@@ -54,14 +54,14 @@ const getKeyAndValue: Function = async (htmlCode: string): Promise<IBookField[]>
 
   // tslint:disable-next-line:no-unnecessary-local-variable
   const keyAndValueList: IBookField[] = await Promise.all(result.map((value: string): IBookField => ({
-        dataKey: getkeyName(value), dataValue: getValueName(value)
+        bookKey: getkeyName(value), bookValue: getValueName(value)
       })
     )
   );
 
   for (let i: number = 0; i < keyAndValueList.length; i = i + 1) {
-    if (keyAndValueList[i].dataKey === null) {
-      keyAndValueList[i].dataKey = keyAndValueList[i - 1].dataKey;
+    if (keyAndValueList[i].bookKey === null) {
+      keyAndValueList[i].bookKey = keyAndValueList[i - 1].bookKey;
     }
   }
 
@@ -83,7 +83,7 @@ const parserBookDetail: Function = async (htmlCode: string): Promise<IBookField[
   }
 };
 
-const getLibraryAllValueName: Function = (text: string): ILibraryField => {
+const getCollectionAllValueName: Function = (text: string): ICollectionField => {
   const result: string[] = text.match(/<td [\w\W]*?>[\w\W]*?<\/td>/gi);
 
   return {
@@ -93,14 +93,14 @@ const getLibraryAllValueName: Function = (text: string): ILibraryField => {
   };
 };
 
-const parserLibraryList: Function = async (htmlCode: string): Promise<ILibraryField[]> => {
+const parserCollectionList: Function = async (htmlCode: string): Promise<ICollectionField[]> => {
   try {
     const result: string[] = htmlCode.match(/<tr class="bibItemsEntry">[\w\W]*?<\/tr>/gi);
     if (result !== null) {
       // tslint:disable-next-line:no-unnecessary-local-variable
-      const libraryList: ILibraryField[] = await Promise.all(result.map((value: string): ILibraryField => getLibraryAllValueName(value)));
+      const collectionList: ICollectionField[] = await Promise.all(result.map((value: string): ICollectionField => getCollectionAllValueName(value)));
 
-      return libraryList;
+      return collectionList;
     }
 
     return null;
@@ -110,12 +110,12 @@ const parserLibraryList: Function = async (htmlCode: string): Promise<ILibraryFi
 };
 
 const combineData: Function = async (htmlCode: string): Promise<IThirdLayerDataType> => {
-  const tempLibrary: ILibraryField[] = await parserLibraryList(htmlCode);
+  const tempCollection: ICollectionField[] = await parserCollectionList(htmlCode);
   const tempBookDetail: IBookField[] = await parserBookDetail(htmlCode);
 
   return {
     bookDetail: tempBookDetail,
-    library: tempLibrary
+    collection: tempCollection
   };
 };
 
