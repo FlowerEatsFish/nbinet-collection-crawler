@@ -37,6 +37,14 @@ const bookCollection: Function = async (keyword: string, dataType: string = 'isb
 
   // tslint:disable-next-line:no-any
   let result: any = null;
+
+  if (htmlCodeAfterFetch.data.includes('沒有查獲符合查詢條件的館藏')) {
+    // To do here if no result is got from the HTML code
+    console.log('>>> No result is got from the HTML code.');
+
+    return result;
+  }
+
   if (htmlCodeAfterFetch.data.includes('class="browseEntry"')) {
     // To do here if The initial HTML code get from first layer page
     console.log('>>> The initial HTML code get from first layer page.');
