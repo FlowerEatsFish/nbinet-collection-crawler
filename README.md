@@ -100,9 +100,9 @@
 ### Input parameters you want to search for information
 
   ```js
-  import BooksComTwCollection from 'books-com-tw-collection.development'; // Here uses development mode as an example
+  import NbinetCollection from 'nbinet-collection.development'; // Here uses development mode as an example
 
-  const result = BooksComTwCollection(
+  const result = NbinetCollection(
     keyword, // string. Necessary.
              // If you configs it as null, it will get an error.
     dataType, // string. Default: "keyword". Optional: "keyword", "isbn".
