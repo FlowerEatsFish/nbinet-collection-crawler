@@ -12,8 +12,8 @@
 
   ```shell
   # To download the files and install packages.
-  $ git clone https://github.com/FlowerEatFish/api.nbinet.git
-  $ cd api.nbinet
+  $ git clone https://github.com/FlowerEatFish/nbinet-api.git
+  $ cd nbinet-api
   $ npm install
 
   # To run a demo.
@@ -100,9 +100,9 @@
 ### Input parameters you want to search for information
 
   ```js
-  import NbinetCollection from 'nbinet-collection.development'; // Here uses development mode as an example
+  import NbinetCollectionApi from 'nbinet-collection-api.development'; // Here uses development mode as an example
 
-  const result = NbinetCollection(
+  const result = NbinetCollectionApi(
     keyword, // string. Necessary.
              // If you configs it as null, it will get an error.
     dataType, // string. Default: "keyword". Optional: "keyword", "isbn".

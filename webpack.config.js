@@ -5,13 +5,13 @@ const packageInfo = require('./package.json');
 module.exports = {
   mode: 'development',
   entry: {
-    'nbinet-collection': './src/index.ts',
+    'nbinet-collection-api': './src/index.ts',
   },
   output: {
     path: path.join(__dirname, '/dist'),
     publicPath: 'dist/',
     filename: './[name].development.js',
-    library: 'nbinet-collection',
+    library: 'nbinet-collection-api',
     libraryTarget: 'umd'
   },
   module: {
