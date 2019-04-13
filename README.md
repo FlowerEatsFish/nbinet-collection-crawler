@@ -1,4 +1,4 @@
-# Unofficial National Bibliographic Information Network API
+# Unofficial National Bibliographic Information Network Collection API
 
 [![Travis-CI status](https://travis-ci.com/FlowerEatFish/nbinet-api.svg?branch=master)](https://travis-ci.com/FlowerEatFish/nbinet-api/builds)
 [![AppVeyor status](https://ci.appveyor.com/api/projects/status/uwap6s2c4ga8x4jl/branch/master?svg=true)](https://ci.appveyor.com/project/FlowerEatFish/nbinet-api/history)
@@ -18,8 +18,8 @@
 
   ```shell
   # To download the files and install packages.
-  $ git clone https://github.com/FlowerEatFish/nbinet-api.git
-  $ cd nbinet-api
+  $ git clone https://github.com/FlowerEatFish/nbinet-collection-api.git
+  $ cd nbinet-collection-api
   $ npm install
 
   # To run a demo.
@@ -95,7 +95,7 @@
 ### Input parameters you want to search for information
 
   ```js
-  import NbinetCollectionApi from 'nbinet-collection-api.development'; // Here uses development mode as an example
+  import NbinetCollectionApi from 'nbinet-collection-api';
 
   const result = NbinetCollectionApi(
     keyword, // string. Necessary.

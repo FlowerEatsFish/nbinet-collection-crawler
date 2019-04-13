@@ -1,5 +1,5 @@
 {
-  "name": "@flowereatfish/nbinet-api",
+  "name": "@flowereatfish/nbinet-collection-api",
   "version": "1.0.0",
   "description": "Unofficial National Bibliographic Information Network API",
   "main": "index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlowerEatFish/nbinet-api.git"
+    "url": "git+https://github.com/FlowerEatFish/nbinet-collection-api.git"
   },
   "keywords": [
     "api",
@@ -24,9 +24,9 @@
   "author": "Eating-Fish Flower",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FlowerEatFish/nbinet-api/issues"
+    "url": "https://github.com/FlowerEatFish/nbinet-collection-api/issues"
   },
-  "homepage": "https://github.com/FlowerEatFish/nbinet-api#readme",
+  "homepage": "https://github.com/FlowerEatFish/nbinet-collection-api#readme",
   "dependencies": {
     "axios": "^0.18.0"
   },
