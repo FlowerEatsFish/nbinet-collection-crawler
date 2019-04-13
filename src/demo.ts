@@ -2,15 +2,14 @@
  * Demo
  */
 
-// tslint:disable-next-line:import-name
 import bookCollection from './index';
 
-interface IDataType {
+interface DataType {
   keyword: string;
   dataType: string;
 }
 
-const dataList: IDataType[] = [
+const dataList: DataType[] = [
   { keyword: '9789867364739', dataType: 'isbn' }, // It will get one result from third layer as expected.
   { keyword: '等一個人咖啡', dataType: 'keyword' }, // It will get more results from second layer as expected.
   { keyword: '9789867494122', dataType: 'isbn' }, // It will get more results from first layer as expected.
