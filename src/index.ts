@@ -29,7 +29,7 @@ const getThirdLayerDataFromSecond: Function = async (secondLayerData: SecondLaye
   return result;
 };
 
-const bookCollection: Function = async (keyword: string, dataType: string = 'isbn'): Promise<ThirdLayerDataType | ThirdLayerDataType[] | null> => {
+const nbinetCollection: Function = async (keyword: string, dataType: string = 'isbn'): Promise<ThirdLayerDataType | ThirdLayerDataType[] | null> => {
   const htmlCodeAfterFetch: FetchResult = await collectionFetch(null, keyword, dataType);
   // To check where the HTML code is from and do next step
   console.log(`>>> You search data using ${htmlCodeAfterFetch.url}`);
@@ -85,4 +85,4 @@ const bookCollection: Function = async (keyword: string, dataType: string = 'isb
   return result;
 };
 
-export default bookCollection;
+export default nbinetCollection;

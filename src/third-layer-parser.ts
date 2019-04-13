@@ -14,8 +14,8 @@ export interface CollectionField {
 }
 
 export interface ThirdLayerDataType {
-  bookDetail: BookField[];
-  collection: CollectionField[];
+  bookDetail: BookField[] | null;
+  collection: CollectionField[] | null;
 }
 
 const removeAllHtmlTag: Function = (text: string): string => {
@@ -71,18 +71,14 @@ const getKeyAndValue: Function = async (htmlCode: string): Promise<BookField[] |
 };
 
 const parserBookDetail: Function = async (htmlCode: string): Promise<BookField[] | null> => {
-  try {
-    const result: string[] | null = htmlCode.match(/<div class="bibContent">[\w\W]*?<\/div>/gi);
+  const result: string[] | null = htmlCode.match(/<div class="bibContent">[\w\W]*?<\/div>/gi);
 
-    if (result !== null) {
-      const bookDetail: BookField[] = await Promise.all(result.map((value: string): BookField => getKeyAndValue(value)));
+  if (result !== null) {
+    const bookDetail: BookField[] = await Promise.all(result.map((value: string): BookField => getKeyAndValue(value)));
 
-      return ([] as BookField[]).concat.apply([], bookDetail);
-    }
-    return null;
-  } catch {
-    return null;
+    return ([] as BookField[]).concat.apply([], bookDetail);
   }
+  return null;
 };
 
 const getCollectionAllValueName: Function = (text: string): CollectionField => {
@@ -104,23 +100,19 @@ const getCollectionAllValueName: Function = (text: string): CollectionField => {
 };
 
 const parserCollectionList: Function = async (htmlCode: string): Promise<CollectionField[] | null> => {
-  try {
-    const result: string[] | null = htmlCode.match(/<tr class="bibItemsEntry">[\w\W]*?<\/tr>/gi);
+  const result: string[] | null = htmlCode.match(/<tr class="bibItemsEntry">[\w\W]*?<\/tr>/gi);
 
-    if (result !== null) {
-      const collectionList: CollectionField[] = await Promise.all(result.map((value: string): CollectionField => getCollectionAllValueName(value)));
+  if (result !== null) {
+    const collectionList: CollectionField[] = await Promise.all(result.map((value: string): CollectionField => getCollectionAllValueName(value)));
 
-      return collectionList;
-    }
-    return null;
-  } catch {
-    return null;
+    return collectionList;
   }
+  return null;
 };
 
 const combineData: Function = async (htmlCode: string): Promise<ThirdLayerDataType> => {
-  const tempCollection: CollectionField[] = await parserCollectionList(htmlCode);
-  const tempBookDetail: BookField[] = await parserBookDetail(htmlCode);
+  const tempCollection: CollectionField[] | null = await parserCollectionList(htmlCode);
+  const tempBookDetail: BookField[] | null = await parserBookDetail(htmlCode);
 
   return {
     bookDetail: tempBookDetail,
