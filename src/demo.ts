@@ -19,7 +19,8 @@ const dataList: DataType[] = [
 const demo: Function = async (): Promise<void> => {
   for (const data of dataList) {
     await console.log(`>>> You search data using keyword "${data.keyword}" and type "${data.dataType}".`);
-    await bookCollection(data.keyword, data.dataType);
+    const result = await bookCollection(data.keyword, data.dataType);
+    await console.log(result);
   }
 };
 
