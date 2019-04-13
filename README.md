@@ -1,5 +1,11 @@
 # Unofficial National Bibliographic Information Network API
 
+[![Travis-CI status](https://travis-ci.com/FlowerEatFish/nbinet-api.svg?branch=master)](https://travis-ci.com/FlowerEatFish/nbinet-api/builds)
+[![AppVeyor status](https://ci.appveyor.com/api/projects/status/uwap6s2c4ga8x4jl/branch/master?svg=true)](https://ci.appveyor.com/project/FlowerEatFish/nbinet-api/history)
+[![Dependencies status](https://david-dm.org/FlowerEatFish/nbinet-api/status.svg)](https://david-dm.org/FlowerEatFish/nbinet-api)
+[![Code style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 ## Requirements
 
 - This construct uses Async/Await methods, so you need to run [polyfill.js](https://polyfill.io/v2/docs/) first.
