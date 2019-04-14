@@ -11,7 +11,6 @@ interface DataType {
 
 const dataList: DataType[] = [
   { keyword: '護理學博士教育課程規劃與評值研討會', dataType: 'keyword' }, // It will get one result from third layer as expected.
-  { keyword: '等一個人咖啡', dataType: 'keyword' }, // It will get more results from second layer as expected.
   { keyword: '9789867494122', dataType: 'isbn' }, // It will get more results from first layer as expected.
   { keyword: 'blablablablablablablablablablablabla', dataType: 'keyowrd' } // It will be no result.
 ];

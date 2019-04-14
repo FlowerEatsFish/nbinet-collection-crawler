@@ -2,6 +2,7 @@
 
 [![Travis-CI status](https://travis-ci.com/FlowerEatFish/nbinet-api.svg?branch=master)](https://travis-ci.com/FlowerEatFish/nbinet-api/builds)
 [![AppVeyor status](https://ci.appveyor.com/api/projects/status/uwap6s2c4ga8x4jl/branch/master?svg=true)](https://ci.appveyor.com/project/FlowerEatFish/nbinet-api/history)
+[![Codecov status](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/commits)
 [![Dependencies status](https://david-dm.org/FlowerEatFish/nbinet-api/status.svg)](https://david-dm.org/FlowerEatFish/nbinet-api)
 [![Code style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -58,18 +59,6 @@
       }
     ]
   }
-  ```
-
-  ```shell
-  >>> You search data using keyword "等一個人咖啡" and type "keyword".
-
-  [
-    {
-      bookDetail: [ {...}, {...}, ... ],
-      collection: [ {...}, {...}, ... ]
-    },
-    { ... }, { ... }, ...
-  ] # Array.prototype.length <= 50
   ```
 
   ```shell
