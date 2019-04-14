@@ -1,10 +1,17 @@
+# directories
+coverage/
+test/
+
 # hidden configs
 .editorconfig
 .eslintignore
 .eslintrc
 .gitignore
+.travis.yml
 
 # configs
+appveyor.yml
+jest.config.js
 package-lock.json
 tsconfig.json
 webpack.config.js
