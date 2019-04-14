@@ -2,7 +2,7 @@
  * Demo
  */
 
-import bookCollection from './index';
+import nbinetCollection from './index';
 
 interface DataType {
   keyword: string;
@@ -18,7 +18,7 @@ const dataList: DataType[] = [
 const demo: Function = async (): Promise<void> => {
   for (const data of dataList) {
     await console.log(`>>> You search data using keyword "${data.keyword}" and type "${data.dataType}".`);
-    const result = await bookCollection(data.keyword, data.dataType);
+    const result = await nbinetCollection(data.keyword, data.dataType);
     await console.log(result);
   }
 };
