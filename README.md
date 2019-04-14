@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/@flowereatfish/nbinet-collection-api.svg)](https://www.npmjs.com/package/@flowereatfish/nbinet-collection-api)
 [![Travis-CI status](https://travis-ci.com/FlowerEatFish/nbinet-collection-api.svg?branch=master)](https://travis-ci.com/FlowerEatFish/nbinet-collection-api/builds)
-[![AppVeyor status](https://ci.appveyor.com/api/projects/status/uwap6s2c4ga8x4jl/branch/master?svg=true)](https://ci.appveyor.com/project/FlowerEatFish/nbinet-collection-api/history)
+[![AppVeyor status](https://ci.appveyor.com/api/projects/status/9h1kkwly756i4hf3/branch/master?svg=true)](https://ci.appveyor.com/project/FlowerEatFish/nbinet-collection-api/history)
 [![Codecov status](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/commits)
 [![Dependencies status](https://david-dm.org/FlowerEatFish/nbinet-collection-api/status.svg)](https://david-dm.org/FlowerEatFish/nbinet-collection-api)
 [![Code style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
