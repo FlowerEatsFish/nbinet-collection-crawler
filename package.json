@@ -9,9 +9,10 @@
     "build": "tsc -p ./tsconfig.json",
     "build:dev": "cross-env NODE_ENV=development webpack",
     "build:prod": "cross-env NODE_ENV=production webpack",
-    "demo:js": "ts-node ./lib/demo.js",
+    "demo:js": "node ./lib/demo.js",
     "demo:ts": "ts-node ./src/demo.ts",
     "lint": "eslint . -f stylish --ext .js --ext .ts",
+    "lint:fix": "eslint . -f stylish --ext .js --ext .ts --fix",
     "test": "jest --coverage --silent"
   },
   "repository": {

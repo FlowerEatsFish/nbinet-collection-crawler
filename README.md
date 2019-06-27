@@ -8,18 +8,20 @@
 [![Code style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-- [Unofficial National Bibliographic Information Network Collection API](#unofficial-national-bibliographic-information-network-collection-api)
-  - [Requirement](#requirement)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Node.js version 8 or higher (with full Async/Await support)](#nodejs-version-8-or-higher-with-full-asyncawait-support)
-    - [Others](#others)
-  - [Demo](#demo)
-    - [Commands](#commands)
-    - [Results](#results)
-  - [API documentation](#api-documentation)
-    - [Input parameters](#input-parameters)
-    - [Output results](#output-results)
+非官方全國圖書書目資訊網 API
+
+- [Unofficial National Bibliographic Information Network Collection API](#Unofficial-National-Bibliographic-Information-Network-Collection-API)
+  - [Requirement](#Requirement)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+    - [Node.js version 8 or higher (with full Async/Await support)](#Nodejs-version-8-or-higher-with-full-AsyncAwait-support)
+    - [Others](#Others)
+  - [Demo](#Demo)
+    - [Commands](#Commands)
+    - [Results](#Results)
+  - [API documentation](#API-documentation)
+    - [Input parameters](#Input-parameters)
+    - [Output results](#Output-results)
 
 ## Requirement
 
@@ -129,8 +131,8 @@ null
 import nbinetCollectionApi from '@flowereatfish/nbinet-collection-api';
 
 const result = nbinetCollectionApi(
-  keyword, // string. Necessary.
-            // If you configs it as null, it will get an error.
+  keyword,  // string. Necessary.
+            // If you set it as null, it will get an error.
   dataType, // string. Default: "keyword". Optional: "keyword", "isbn".
             // Every page only shows maximum 50 results.
             // If you enter out of optional values, it will set "keyword".
