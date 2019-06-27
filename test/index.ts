@@ -9,9 +9,9 @@ describe('Run demo', (): void => {
       'keyword'
     );
 
-      expect(typeof result).toBe('object');
-      expect(Array.isArray(result)).toBeFalsy();
-      expect(result).not.toBeNull();
+    expect(typeof result).toBe('object');
+    expect(Array.isArray(result)).toBeFalsy();
+    expect(result).not.toBeNull();
   }, timeout);
 
   it('Should get results as Array and no more than 50', async (): Promise<void> => {
