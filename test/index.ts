@@ -9,9 +9,9 @@ describe('Run demo', (): void => {
       'keyword'
     );
 
-    expect(
-      (typeof result === 'object') && (result !== null) && (!Array.isArray(result))
-    ).toBeTruthy();
+      expect(typeof result).toBe('object');
+      expect(Array.isArray(result)).toBeFalsy();
+      expect(result).not.toBeNull();
   }, timeout);
 
   it('Should get results as Array and no more than 50', async (): Promise<void> => {
@@ -20,9 +20,8 @@ describe('Run demo', (): void => {
       'isbn'
     );
 
-    expect(
-      (Array.isArray(result)) && (result.length <= 50)
-    ).toBeTruthy();
+    expect(Array.isArray(result)).toBeTruthy();
+    expect(result.length).toBeLessThanOrEqual(50);
   }, timeout);
 
   it('Should do not have any result as Null', async (): Promise<void> => {
@@ -31,6 +30,6 @@ describe('Run demo', (): void => {
       'keyowrd'
     );
 
-    expect(result == null).toBeTruthy();
+    expect(result).toBeNull();
   }, timeout);
 });
