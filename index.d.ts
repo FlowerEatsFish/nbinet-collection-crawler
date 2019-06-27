@@ -1,3 +1,5 @@
+export type DataType = 'keyword' | 'isbn';
+
 export interface BookDetailField {
   bookKey: string;
   bookValue: string;
@@ -15,7 +17,7 @@ export interface DetailType {
 }
 
 export type NbinetCollectionFunction =
-  (keyword: string, dataType?: string) => DetailType[] | null;
+  (keyword: string, dataType?: DataType) => DetailType[] | null;
 
 declare const nbinetCollectionApi: NbinetCollectionFunction;
 
