@@ -2,8 +2,9 @@
  * To fetch data via books.com.tw.
  */
 
-import { DataType } from 'index';
 import axios, { AxiosError, AxiosResponse } from 'axios';
+
+import { DataType } from '../index';
 
 export interface FetchResult {
   data: string | null;
