@@ -2,6 +2,7 @@
  * To fetch data via books.com.tw.
  */
 
+import { DataType } from 'index';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
 export interface FetchResult {
@@ -28,7 +29,7 @@ const setKeywordToInsertUrl: Function = (keyword: string): string => {
   return encodeURI(temp);
 };
 
-const setTypeToInsertUrl: Function = (dataType: string): string => {
+const setTypeToInsertUrl: Function = (dataType: DataType): string => {
   switch (dataType) {
     case 'isbn':
       return 'i';
@@ -37,7 +38,7 @@ const setTypeToInsertUrl: Function = (dataType: string): string => {
   }
 };
 
-const setUrl: Function = (keyword: string, dataType: string): string => `http://nbinet3.ncl.edu.tw/search~S1*cht/?searchtype=${setTypeToInsertUrl(dataType)}&searcharg=${setKeywordToInsertUrl(keyword)}&searchscope=1`;
+const setUrl: Function = (keyword: string, dataType: DataType): string => `http://nbinet3.ncl.edu.tw/search~S1*cht/?searchtype=${setTypeToInsertUrl(dataType)}&searcharg=${setKeywordToInsertUrl(keyword)}&searchscope=1`;
 
 const fetchFullHtmlCode: Function = async (url: string): Promise<string> => {
   return new Promise((resolve: (data: string) => void, reject: (error: AxiosError) => void): void => {
@@ -47,7 +48,7 @@ const fetchFullHtmlCode: Function = async (url: string): Promise<string> => {
   });
 };
 
-const setUrlFollowParameter: Function = async (url: string, keyword: string, dataType: string): Promise<string> => {
+const setUrlFollowParameter: Function = async (url: string, keyword: string, dataType: DataType): Promise<string> => {
   if (url) {
     return url;
   }
@@ -57,7 +58,7 @@ const setUrlFollowParameter: Function = async (url: string, keyword: string, dat
   return combineUrl;
 };
 
-export const collectionFetch: Function = async (url: string, keyword: string, dataType: string = 'keyword'): Promise<FetchResult> => {
+export const collectionFetch: Function = async (url: string, keyword: string, dataType: DataType = 'keyword'): Promise<FetchResult> => {
   const fullUrl: string = await setUrlFollowParameter(url, keyword, dataType);
 
   let data: string | null;

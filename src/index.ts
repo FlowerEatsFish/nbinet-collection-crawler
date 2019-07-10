@@ -2,10 +2,11 @@
  * Main control for this library.
  */
 
+import { DetailType, NbinetCollectionFunction } from '../index';
 import { firstLayerParser, FirstLayerDataType } from './first-layer-parser';
 import { collectionFetch, FetchResult } from './nbinet-fetch';
 import { SecondLayerDataType, secondLayerParser } from './second-layer-parser';
-import { ThirdLayerDataType, thirdLayerParser } from './third-layer-parser';
+import { thirdLayerParser } from './third-layer-parser';
 
 const getSecondLayerDataFromFirst: Function = async (firstLayerData: FirstLayerDataType[]): Promise<SecondLayerDataType[]> => {
   const htmlCode: FetchResult[] = await Promise.all(
@@ -18,18 +19,18 @@ const getSecondLayerDataFromFirst: Function = async (firstLayerData: FirstLayerD
   return ([] as SecondLayerDataType[]).concat.apply([], result);
 };
 
-const getThirdLayerDataFromSecond: Function = async (secondLayerData: SecondLayerDataType[]): Promise<ThirdLayerDataType[]> => {
+const getThirdLayerDataFromSecond: Function = async (secondLayerData: SecondLayerDataType[]): Promise<DetailType[]> => {
   const htmlCode: FetchResult[] = await Promise.all(
     secondLayerData.map((value: SecondLayerDataType): FetchResult => collectionFetch(value.url))
   );
-  const result: ThirdLayerDataType[] = await Promise.all(
-    htmlCode.map((value: FetchResult): ThirdLayerDataType => thirdLayerParser(value.data))
+  const result: DetailType[] = await Promise.all(
+    htmlCode.map((value: FetchResult): DetailType => thirdLayerParser(value.data))
   );
 
   return result;
 };
 
-const nbinetCollection: Function = async (keyword: string, dataType: string = 'isbn'): Promise<ThirdLayerDataType | ThirdLayerDataType[] | null> => {
+const nbinetCollection: NbinetCollectionFunction = async (keyword, dataType = 'isbn') => {
   const htmlCodeAfterFetch: FetchResult = await collectionFetch(null, keyword, dataType);
   // To check where the HTML code is from and do next step
 
@@ -39,7 +40,7 @@ const nbinetCollection: Function = async (keyword: string, dataType: string = 'i
     return null;
   }
 
-  let result: ThirdLayerDataType | ThirdLayerDataType[] | null = null;
+  let result: DetailType | DetailType[] | null = null;
 
   if (htmlCodeAfterFetch.data.includes('沒有查獲符合查詢條件的館藏')) {
     // To do here if no result is got from the HTML code

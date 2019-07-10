@@ -2,21 +2,7 @@
  * To collect the results of third layer from the HTML page.
  */
 
-export interface BookField {
-  bookKey: string;
-  bookValue: string;
-}
-
-export interface CollectionField {
-  library: string | null;
-  callNumber: string | null;
-  status: string | null;
-}
-
-export interface ThirdLayerDataType {
-  bookDetail: BookField[] | null;
-  collection: CollectionField[] | null;
-}
+import { BookDetailField, CollectionField, DetailType } from '../index';
 
 const removeAllHtmlTag: Function = (text: string): string => {
   let result: string = text.replace(/<\/?\w+[^>]*>/gi, '');
@@ -48,14 +34,14 @@ const getValueName: Function = (text: string): string | null => {
   return null;
 };
 
-const getKeyAndValue: Function = async (htmlCode: string): Promise<BookField[] | null> => {
+const getKeyAndValue: Function = async (htmlCode: string): Promise<BookDetailField[] | null> => {
   let result: string[] | null = htmlCode.match(/<!-- BEGIN INNER BIB TABLE -->[\w\W]*?<!-- END INNER BIB TABLE -->/gi);
 
   if (result != null) {
     result = result[0].match(/<tr>[\w\W]*?<\/tr>/gi);
 
     if (result != null) {
-      const keyAndValueList: BookField[] = await Promise.all(result.map((value: string): BookField => ({
+      const keyAndValueList: BookDetailField[] = await Promise.all(result.map((value: string): BookDetailField => ({
         bookKey: getkeyName(value), bookValue: getValueName(value)
       })));
 
@@ -70,13 +56,13 @@ const getKeyAndValue: Function = async (htmlCode: string): Promise<BookField[] |
   return null;
 };
 
-const parserBookDetail: Function = async (htmlCode: string): Promise<BookField[] | null> => {
+const parserBookDetail: Function = async (htmlCode: string): Promise<BookDetailField[] | null> => {
   const result: string[] | null = htmlCode.match(/<div class="bibContent">[\w\W]*?<\/div>/gi);
 
   if (result !== null) {
-    const bookDetail: BookField[] = await Promise.all(result.map((value: string): BookField => getKeyAndValue(value)));
+    const bookDetail: BookDetailField[] = await Promise.all(result.map((value: string): BookDetailField => getKeyAndValue(value)));
 
-    return ([] as BookField[]).concat.apply([], bookDetail);
+    return ([] as BookDetailField[]).concat.apply([], bookDetail);
   }
   return null;
 };
@@ -110,9 +96,9 @@ const parserCollectionList: Function = async (htmlCode: string): Promise<Collect
   return null;
 };
 
-const combineData: Function = async (htmlCode: string): Promise<ThirdLayerDataType> => {
+const combineData: Function = async (htmlCode: string): Promise<DetailType> => {
   const tempCollection: CollectionField[] | null = await parserCollectionList(htmlCode);
-  const tempBookDetail: BookField[] | null = await parserBookDetail(htmlCode);
+  const tempBookDetail: BookDetailField[] | null = await parserBookDetail(htmlCode);
 
   return {
     bookDetail: tempBookDetail,
@@ -129,11 +115,11 @@ const collectTargetHtmlCode: Function = (htmlCode: string): string | null => {
   return null;
 };
 
-export const thirdLayerParser: Function = async (htmlCode: string): Promise<ThirdLayerDataType[]> => {
+export const thirdLayerParser: Function = async (htmlCode: string): Promise<DetailType[]> => {
   // To aim target data
   const rawResult: string = collectTargetHtmlCode(htmlCode);
   // To split HTML code depend on the class name
-  const result: ThirdLayerDataType[] = await combineData(rawResult);
+  const result: DetailType[] = await combineData(rawResult);
 
   return result;
 };

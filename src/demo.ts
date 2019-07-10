@@ -2,9 +2,8 @@
  * Demo
  */
 
+import { DataType } from '../index';
 import nbinetCollection from './index';
-
-type DataType = 'keyword' | 'isbn';
 
 interface RequestParams {
   keyword: string;
