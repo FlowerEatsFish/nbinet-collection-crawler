@@ -2,7 +2,7 @@
  * Main control for this library.
  */
 
-import { DetailType, NbinetCollectionFunction } from '../index';
+import { DataType, DetailType, NbinetCollectionFunction } from '../index';
 import { firstLayerParser, FirstLayerDataType } from './first-layer-parser';
 import { collectionFetch, FetchResult } from './nbinet-fetch';
 import { SecondLayerDataType, secondLayerParser } from './second-layer-parser';
@@ -30,7 +30,7 @@ const getThirdLayerDataFromSecond: Function = async (secondLayerData: SecondLaye
   return result;
 };
 
-const nbinetCollection: NbinetCollectionFunction = async (keyword, dataType = 'isbn') => {
+const nbinetCollection: NbinetCollectionFunction = async (keyword: string, dataType: DataType = 'isbn'): Promise<DetailType | DetailType[] | null> => {
   const htmlCodeAfterFetch: FetchResult = await collectionFetch(null, keyword, dataType);
   // To check where the HTML code is from and do next step
 
