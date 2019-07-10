@@ -17,7 +17,7 @@ export interface DetailType {
 }
 
 export type NbinetCollectionFunction =
-  (keyword: string, dataType?: DataType) => DetailType[] | null;
+  (keyword: string, dataType?: DataType) => DetailType | DetailType[] | null;
 
 declare const nbinetCollectionApi: NbinetCollectionFunction;
 
