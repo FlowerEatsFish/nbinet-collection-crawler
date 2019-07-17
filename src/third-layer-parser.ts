@@ -96,13 +96,14 @@ const parserCollectionList: Function = async (htmlCode: string): Promise<Collect
   return null;
 };
 
-const combineData: Function = async (htmlCode: string): Promise<DetailType> => {
+const combineData: Function = async (htmlCode: string, url: string): Promise<DetailType> => {
   const tempCollection: CollectionField[] | null = await parserCollectionList(htmlCode);
   const tempBookDetail: BookDetailField[] | null = await parserBookDetail(htmlCode);
 
   return {
     bookDetail: tempBookDetail,
-    collection: tempCollection
+    collection: tempCollection,
+    url
   };
 };
 
@@ -115,11 +116,11 @@ const collectTargetHtmlCode: Function = (htmlCode: string): string | null => {
   return null;
 };
 
-export const thirdLayerParser: Function = async (htmlCode: string): Promise<DetailType[]> => {
+export const thirdLayerParser: Function = async (htmlCode: string, url: string): Promise<DetailType[]> => {
   // To aim target data
   const rawResult: string = collectTargetHtmlCode(htmlCode);
   // To split HTML code depend on the class name
-  const result: DetailType[] = await combineData(rawResult);
+  const result: DetailType[] = await combineData(rawResult, url);
 
   return result;
 };

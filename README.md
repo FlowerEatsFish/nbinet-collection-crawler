@@ -101,7 +101,8 @@ $ npm start
       callNumber: '419.63 8646 97 ',
       status: '依各館館藏為準'
     }
-  ]
+  ],
+  url: 'http://nbinet3.ncl.edu.tw/search~S1*cht/?searchtype=X&searcharg=%E8%AD%B7%E7%90%86%E5%AD%B8%E5%8D%9A%E5%A3%AB%E6%95%99%E8%82%B2%E8%AA%B2%E7%A8%8B%E8%A6%8F%E5%8A%83%E8%88%87%E8%A9%95%E5%80%BC%E7%A0%94%E8%A8%8E%E6%9C%83&searchscope=1'
 }
 ```
 
@@ -160,7 +161,8 @@ result = {
       status: string
     },
     { ... }, { ... }, ...
-  ]
+  ],
+  url: string
 };
 
 // If you get two or more results, it will return an "array".

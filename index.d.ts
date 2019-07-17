@@ -14,6 +14,7 @@ export interface CollectionField {
 export interface DetailType {
   bookDetail: BookDetailField[] | null;
   collection: CollectionField[] | null;
+  url: string;
 }
 
 export type NbinetCollectionFunction =
