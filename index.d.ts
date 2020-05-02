@@ -1,8 +1,8 @@
 export type DataType = "keyword" | "isbn";
 
 export interface BookDetailField {
-  bookKey: string;
-  bookValue: string;
+  bookKey: string | null;
+  bookValue: string | null;
 }
 
 export interface CollectionField {

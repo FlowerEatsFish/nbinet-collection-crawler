@@ -1,5 +1,4 @@
 import nbinetCollection from "../src/index";
-import { DetailType } from "../index";
 
 const timeout = 60 * 1000;
 
@@ -22,7 +21,9 @@ describe("Run demo", (): void => {
       const result = await nbinetCollection("9789867494122", "isbn");
 
       expect(Array.isArray(result)).toBeTruthy();
-      expect((result as DetailType[]).length).toBeLessThanOrEqual(50);
+      if (Array.isArray(result)) {
+        expect(result.length).toBeLessThanOrEqual(50);
+      }
     },
     timeout,
   );

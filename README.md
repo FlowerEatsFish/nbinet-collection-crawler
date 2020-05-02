@@ -156,8 +156,8 @@ result = {
   bookDetail: object[] or null
   [
     {
-      bookKey: string,
-      bookValue: string
+      bookKey: string | null,
+      bookValue: string | null
     },
     { ... }, { ... }, ...
   ],

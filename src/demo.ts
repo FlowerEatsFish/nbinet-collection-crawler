@@ -16,13 +16,12 @@ const dataList: RequestParams[] = [
   { keyword: "blablablablablablablablablablablabla", dataType: "keyword" }, // It will be no result.
 ];
 
-const demo: Function = async (): Promise<void> => {
+const demo = async (dataList: RequestParams[]): Promise<void> => {
   for (const data of dataList) {
-    await console.log(
-      `>>> You search data using keyword "${data.keyword}" and type "${data.dataType}".`,
-    );
+    console.log(`>>> You search data using keyword "${data.keyword}" and type "${data.dataType}".`);
+
     const result = await nbinetCollection(data.keyword, data.dataType);
-    await console.log(result);
+    console.log(result);
   }
 };
 
