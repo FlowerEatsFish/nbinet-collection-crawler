@@ -1,39 +1,39 @@
-const { BannerPlugin } = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const path = require('path');
-const packageInfo = require('./package.json');
+const { BannerPlugin } = require("webpack");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const path = require("path");
+const packageInfo = require("./package.json");
 
-const DEVELOPMENT = 'development';
-const PRODUCTION = 'production';
+const DEVELOPMENT = "development";
+const PRODUCTION = "production";
 
 const commonConfig = {
   mode: process.env.NODE_ENV,
   entry: {
-    'nbinet-collection-api': './src/index.ts'
+    "nbinet-collection-api": "./src/index.ts",
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: process.env.NODE_ENV === PRODUCTION ? './[name].min.js' : './[name].js',
-    library: 'nbinet-collection-api',
-    libraryTarget: 'umd'
+    path: path.join(__dirname, "dist"),
+    filename: process.env.NODE_ENV === PRODUCTION ? "./[name].min.js" : "./[name].js",
+    library: "nbinet-collection-api",
+    libraryTarget: "umd",
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-      }
-    ]
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+    ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
     new BannerPlugin({
-      banner: `Repository: ${packageInfo.name} | Version: ${packageInfo.version} | Author: ${packageInfo.author} | License: ${packageInfo.license}`
-    })
-  ]
+      banner: `Repository: ${packageInfo.name} | Version: ${packageInfo.version} | Author: ${packageInfo.author} | License: ${packageInfo.license}`,
+    }),
+  ],
 };
 
 const prodConfig = {
@@ -42,12 +42,12 @@ const prodConfig = {
       new UglifyJSPlugin({
         uglifyOptions: {
           compress: {
-            drop_console: true
-          }
-        }
-      })
-    ]
-  }
+            drop_console: true,
+          },
+        },
+      }),
+    ],
+  },
 };
 
 const runBeforeWebpack = () => {

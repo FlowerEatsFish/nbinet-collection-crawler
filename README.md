@@ -5,7 +5,7 @@
 [![AppVeyor status](https://ci.appveyor.com/api/projects/status/9h1kkwly756i4hf3/branch/master?svg=true)](https://ci.appveyor.com/project/FlowerEatFish/nbinet-collection-api/history)
 [![Codecov status](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/commits)
 [![Dependencies status](https://david-dm.org/FlowerEatFish/nbinet-collection-api/status.svg)](https://david-dm.org/FlowerEatFish/nbinet-collection-api)
-[![Code style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 非官方全國圖書書目資訊網 API

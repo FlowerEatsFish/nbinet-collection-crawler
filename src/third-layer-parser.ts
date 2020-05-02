@@ -2,16 +2,16 @@
  * To collect the results of third layer from the HTML page.
  */
 
-import { BookDetailField, CollectionField, DetailType } from '../index';
+import { BookDetailField, CollectionField, DetailType } from "../index";
 
 const removeAllHtmlTag: Function = (text: string): string => {
-  let result: string = text.replace(/<\/?\w+[^>]*>/gi, '');
+  let result: string = text.replace(/<\/?\w+[^>]*>/gi, "");
   // To remove beginning and end of spaces
-  result = result.replace(/^\s+/, '');
-  result = result.replace(/\s+$/, '');
-  result = result.replace(/<!--.*?-->/gi, '');
-  result = result.replace(/&#59/gi, '');
-  result = result.replace(/&nbsp;/gi, '');
+  result = result.replace(/^\s+/, "");
+  result = result.replace(/\s+$/, "");
+  result = result.replace(/<!--.*?-->/gi, "");
+  result = result.replace(/&#59/gi, "");
+  result = result.replace(/&nbsp;/gi, "");
 
   return result;
 };
@@ -35,17 +35,24 @@ const getValueName: Function = (text: string): string | null => {
 };
 
 const getKeyAndValue: Function = async (htmlCode: string): Promise<BookDetailField[] | null> => {
-  let result: string[] | null = htmlCode.match(/<!-- BEGIN INNER BIB TABLE -->[\w\W]*?<!-- END INNER BIB TABLE -->/gi);
+  let result: string[] | null = htmlCode.match(
+    /<!-- BEGIN INNER BIB TABLE -->[\w\W]*?<!-- END INNER BIB TABLE -->/gi,
+  );
 
   if (result != null) {
     result = result[0].match(/<tr>[\w\W]*?<\/tr>/gi);
 
     if (result != null) {
-      const keyAndValueList: BookDetailField[] = await Promise.all(result.map((value: string): BookDetailField => ({
-        bookKey: getkeyName(value), bookValue: getValueName(value)
-      })));
+      const keyAndValueList: BookDetailField[] = await Promise.all(
+        result.map(
+          (value: string): BookDetailField => ({
+            bookKey: getkeyName(value),
+            bookValue: getValueName(value),
+          }),
+        ),
+      );
 
-      for (let i: number = 0; i < keyAndValueList.length; i = i + 1) {
+      for (let i = 0; i < keyAndValueList.length; i = i + 1) {
         if (keyAndValueList[i].bookKey === null) {
           keyAndValueList[i].bookKey = keyAndValueList[i - 1].bookKey;
         }
@@ -60,7 +67,9 @@ const parserBookDetail: Function = async (htmlCode: string): Promise<BookDetailF
   const result: string[] | null = htmlCode.match(/<div class="bibContent">[\w\W]*?<\/div>/gi);
 
   if (result !== null) {
-    const bookDetail: BookDetailField[] = await Promise.all(result.map((value: string): BookDetailField => getKeyAndValue(value)));
+    const bookDetail: BookDetailField[] = await Promise.all(
+      result.map((value: string): BookDetailField => getKeyAndValue(value)),
+    );
 
     return ([] as BookDetailField[]).concat.apply([], bookDetail);
   }
@@ -74,22 +83,26 @@ const getCollectionAllValueName: Function = (text: string): CollectionField => {
     return {
       library: removeAllHtmlTag(result[0]),
       callNumber: removeAllHtmlTag(result[1]),
-      status: removeAllHtmlTag(result[2])
+      status: removeAllHtmlTag(result[2]),
     };
   }
 
   return {
     library: null,
     callNumber: null,
-    status: null
+    status: null,
   };
 };
 
-const parserCollectionList: Function = async (htmlCode: string): Promise<CollectionField[] | null> => {
+const parserCollectionList: Function = async (
+  htmlCode: string,
+): Promise<CollectionField[] | null> => {
   const result: string[] | null = htmlCode.match(/<tr class="bibItemsEntry">[\w\W]*?<\/tr>/gi);
 
   if (result !== null) {
-    const collectionList: CollectionField[] = await Promise.all(result.map((value: string): CollectionField => getCollectionAllValueName(value)));
+    const collectionList: CollectionField[] = await Promise.all(
+      result.map((value: string): CollectionField => getCollectionAllValueName(value)),
+    );
 
     return collectionList;
   }
@@ -103,12 +116,14 @@ const combineData: Function = async (htmlCode: string, url: string): Promise<Det
   return {
     bookDetail: tempBookDetail,
     collection: tempCollection,
-    url
+    url,
   };
 };
 
 const collectTargetHtmlCode: Function = (htmlCode: string): string | null => {
-  const result: string[] | null = htmlCode.match(/<div class="bibInfo">[\w\W]*?<div style="clear:both">/gi);
+  const result: string[] | null = htmlCode.match(
+    /<div class="bibInfo">[\w\W]*?<div style="clear:both">/gi,
+  );
 
   if (result != null) {
     return result[0];
@@ -116,7 +131,10 @@ const collectTargetHtmlCode: Function = (htmlCode: string): string | null => {
   return null;
 };
 
-export const thirdLayerParser: Function = async (htmlCode: string, url: string): Promise<DetailType[]> => {
+export const thirdLayerParser: Function = async (
+  htmlCode: string,
+  url: string,
+): Promise<DetailType[]> => {
   // To aim target data
   const rawResult: string = collectTargetHtmlCode(htmlCode);
   // To split HTML code depend on the class name

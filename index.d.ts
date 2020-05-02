@@ -1,4 +1,4 @@
-export type DataType = 'keyword' | 'isbn';
+export type DataType = "keyword" | "isbn";
 
 export interface BookDetailField {
   bookKey: string;
@@ -17,8 +17,10 @@ export interface DetailType {
   url: string;
 }
 
-export type NbinetCollectionFunction =
-  (keyword: string, dataType?: DataType) => Promise<DetailType | DetailType[] | null>;
+export type NbinetCollectionFunction = (
+  keyword: string,
+  dataType?: DataType,
+) => Promise<DetailType | DetailType[] | null>;
 
 declare const nbinetCollectionApi: NbinetCollectionFunction;
 

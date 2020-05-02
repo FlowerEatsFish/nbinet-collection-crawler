@@ -2,9 +2,9 @@
  * To fetch data via books.com.tw.
  */
 
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosResponse } from "axios";
 
-import { DataType } from '../index';
+import { DataType } from "../index";
 
 export interface FetchResult {
   data: string | null;
@@ -12,44 +12,54 @@ export interface FetchResult {
 }
 
 const removeLeftoverCode: Function = (htmlCode: string): string => {
-  let result: string = htmlCode.replace('\\t', '');
-  result = result.replace('\\n', '');
-  result = result.replace(/\s+/gi, ' ');
+  let result: string = htmlCode.replace("\\t", "");
+  result = result.replace("\\n", "");
+  result = result.replace(/\s+/gi, " ");
 
   return result;
 };
 
 const setKeywordToInsertUrl: Function = (keyword: string): string => {
   // To remove special characters
-  let temp: string = keyword.replace(/[~!@#$%^&*()_+\-=}{[\]|"':;?/.,<>}\\]/gi, ' ');
+  let temp: string = keyword.replace(/[~!@#$%^&*()_+\-=}{[\]|"':;?/.,<>}\\]/gi, " ");
   // To remove two or more consequent spaces and replace a space with plus character
-  temp = temp.replace(/\s+/, '+');
+  temp = temp.replace(/\s+/, "+");
   // To remove last space
-  temp = temp.replace(/\s+$/, '');
+  temp = temp.replace(/\s+$/, "");
 
   return encodeURI(temp);
 };
 
 const setTypeToInsertUrl: Function = (dataType: DataType): string => {
   switch (dataType) {
-    case 'isbn':
-      return 'i';
+    case "isbn":
+      return "i";
     default:
-      return 'X';
+      return "X";
   }
 };
 
-const setUrl: Function = (keyword: string, dataType: DataType): string => `http://nbinet3.ncl.edu.tw/search~S1*cht/?searchtype=${setTypeToInsertUrl(dataType)}&searcharg=${setKeywordToInsertUrl(keyword)}&searchscope=1`;
+const setUrl: Function = (keyword: string, dataType: DataType): string =>
+  `http://nbinet3.ncl.edu.tw/search~S1*cht/?searchtype=${setTypeToInsertUrl(
+    dataType,
+  )}&searcharg=${setKeywordToInsertUrl(keyword)}&searchscope=1`;
 
 const fetchFullHtmlCode: Function = async (url: string): Promise<string> => {
-  return new Promise((resolve: (data: string) => void, reject: (error: AxiosError) => void): void => {
-    axios.get(url)
-      .then((response: AxiosResponse): void => resolve(removeLeftoverCode(response.data)))
-      .catch((error: AxiosError): void => reject(error));
-  });
+  return new Promise(
+    (resolve: (data: string) => void, reject: (error: AxiosError) => void): void => {
+      axios
+        .get(url)
+        .then((response: AxiosResponse): void => resolve(removeLeftoverCode(response.data)))
+        .catch((error: AxiosError): void => reject(error));
+    },
+  );
 };
 
-const setUrlFollowParameter: Function = async (url: string, keyword: string, dataType: DataType): Promise<string> => {
+const setUrlFollowParameter: Function = async (
+  url: string,
+  keyword: string,
+  dataType: DataType,
+): Promise<string> => {
   if (url) {
     return url;
   }
@@ -59,7 +69,11 @@ const setUrlFollowParameter: Function = async (url: string, keyword: string, dat
   return combineUrl;
 };
 
-export const collectionFetch: Function = async (url: string, keyword: string, dataType: DataType = 'keyword'): Promise<FetchResult> => {
+export const collectionFetch: Function = async (
+  url: string,
+  keyword: string,
+  dataType: DataType = "keyword",
+): Promise<FetchResult> => {
   const fullUrl: string = await setUrlFollowParameter(url, keyword, dataType);
 
   let data: string | null;
