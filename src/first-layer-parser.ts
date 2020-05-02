@@ -82,11 +82,13 @@ const combineData = (dataList: CollectDataType[]): FirstLayerDataType[] => {
   return newData;
 };
 
-const splitHtmlCode = (htmlCode: string): string[] | null =>
-  htmlCode.match(/<tr[\w\W]*?>[\w\W]*?<\/tr>/gi);
+const splitHtmlCode = (htmlCode: string): string[] | null => {
+  return htmlCode.match(/<tr[\w\W]*?>[\w\W]*?<\/tr>/gi);
+};
 
-const collectTargetHtmlCode = (htmlCode: string): string[] | null =>
-  htmlCode.match(/<table[\w\W]*? class="browseList">[\w\W]*?<\/table>/gi);
+const collectTargetHtmlCode = (htmlCode: string): string[] | null => {
+  return htmlCode.match(/<table[\w\W]*? class="browseList">[\w\W]*?<\/table>/gi);
+};
 
 export const firstLayerParser = (htmlCode: string): FirstLayerDataType[] | null => {
   // To aim target data

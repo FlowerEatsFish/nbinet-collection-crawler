@@ -65,7 +65,7 @@ export const collectionFetch = async (
   keyword: string = "",
   dataType: DataType = "keyword",
 ): Promise<FetchResult> => {
-  const fullUrl: string = setUrlFollowParameter(url, keyword, dataType);
+  const fullUrl = setUrlFollowParameter(url, keyword, dataType);
 
   return { data: await fetchFullHtmlCode(fullUrl), url: fullUrl };
 };

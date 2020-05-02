@@ -49,21 +49,20 @@ const getLibrary = (htmlCode: string): string | null => {
 };
 
 const setCollectData = (htmlCodeList: string[]): SecondLayerDataType[] => {
-  const result: SecondLayerDataType[] = htmlCodeList.map(
+  return htmlCodeList.map(
     (value): SecondLayerDataType => ({
       library: getLibrary(value),
       title: getTitle(value),
       url: getUrl(value),
     }),
   );
-
-  return result;
 };
 
-const splitHtmlCode = (htmlCode: string): string[] | null =>
-  htmlCode.match(
+const splitHtmlCode = (htmlCode: string): string[] | null => {
+  return htmlCode.match(
     /<tr class="briefCitRow">[\w\W]*?<!--this is customized <screens\/briefcit_cht\.html>-->/gi,
   );
+};
 
 const collectTargetHtmlCode = (htmlCode: string): string | null => {
   const result = htmlCode.match(

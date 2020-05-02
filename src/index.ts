@@ -12,7 +12,7 @@ const getSecondLayerDataFromFirst = async (
   firstLayerData: FirstLayerDataType[],
 ): Promise<SecondLayerDataType[]> => {
   const resultAfterFetch = await Promise.all(
-    firstLayerData.map(async (value): Promise<FetchResult> => await collectionFetch(value.url)),
+    firstLayerData.map((value): Promise<FetchResult> => collectionFetch(value.url)),
   );
   const result = resultAfterFetch.map(
     (value: FetchResult): SecondLayerDataType[] => secondLayerParser(value.data || "") || [],
@@ -25,7 +25,7 @@ const getThirdLayerDataFromSecond = async (
   secondLayerData: SecondLayerDataType[],
 ): Promise<DetailType[]> => {
   const resultAfterFetch = await Promise.all(
-    secondLayerData.map(async (value): Promise<FetchResult> => await collectionFetch(value.url)),
+    secondLayerData.map((value): Promise<FetchResult> => collectionFetch(value.url)),
   );
   const result = resultAfterFetch.map(
     (value: FetchResult): DetailType => thirdLayerParser(value.data || "", value.url),
