@@ -11,8 +11,8 @@
 非官方全國圖書書目資訊網 API
 
 - [Unofficial National Bibliographic Information Network Collection API](#Unofficial-National-Bibliographic-Information-Network-Collection-API)
-  - [Requirement](#Requirement)
-  - [Installation](#Installation)
+  - [Requirements](#Requirements)
+  - [Installations](#Installations)
   - [Usage](#Usage)
     - [Node.js version 8 or higher (with full Async/Await support)](#Nodejs-version-8-or-higher-with-full-AsyncAwait-support)
     - [Others](#Others)
@@ -23,11 +23,11 @@
     - [Input parameters](#Input-parameters)
     - [Output results](#Output-results)
 
-## Requirement
+## Requirements
 
-This construct uses [Axios.js](https://github.com/axios/axios), so you need to care the Cross-Origin Requests (CORS).
+- This construct uses [Axios.js](https://github.com/axios/axios), so you need to care the Cross-Origin Requests (CORS).
 
-## Installation
+## Installations
 
 - NPM
 
@@ -153,7 +153,7 @@ const result = nbinetCollectionApi(
 ```javascript
 // If you get one result, it will return an "object".
 result = {
-  bookDetail: object[] or null
+  bookDetail: object[] | null
   [
     {
       bookKey: string | null,
@@ -161,7 +161,7 @@ result = {
     },
     { ... }, { ... }, ...
   ],
-  collection: object[] or null
+  collection: object[] | null
   [
     {
       library: string,
@@ -170,7 +170,7 @@ result = {
     },
     { ... }, { ... }, ...
   ],
-  url: string
+  url: string,
 };
 
 // If you get two or more results, it will return an "array".
@@ -178,7 +178,7 @@ result = [
   {
     ...  // This result is the same as above.
   },
-  ...
+  { ... }, { ... }, ...
 ];
 
 // If you have not got any result, it will return a "null".
