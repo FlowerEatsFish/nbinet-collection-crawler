@@ -29,8 +29,16 @@ This construct uses [Axios.js](https://github.com/axios/axios), so you need to c
 
 ## Installation
 
+- NPM
+
 ```shell
 npm install @flowereatfish/nbinet-collection-api --save
+```
+
+- Yarn
+
+```shell
+yarn add @flowereatfish/nbinet-collection-api
 ```
 
 ## Usage
@@ -65,10 +73,10 @@ nbinetCollectionApi('護理學博士教育課程規劃與評值研討會', 'keyw
 # To download the files and install packages.
 $ git clone https://github.com/FlowerEatFish/nbinet-collection-api.git
 $ cd nbinet-collection-api
-$ npm install
+$ yarn install # npm install
 
 # To run a demo.
-$ npm start
+$ yarn start # npm start
 ```
 
 ### Results
