@@ -9,12 +9,12 @@ const PRODUCTION = "production";
 const commonConfig = {
   mode: process.env.NODE_ENV,
   entry: {
-    "nbinet-collection-api": "./src/index.ts",
+    "nbinet-collection-crawler": "./src/index.ts",
   },
   output: {
     path: path.join(__dirname, "dist"),
     filename: process.env.NODE_ENV === PRODUCTION ? "./[name].min.js" : "./[name].js",
-    library: "nbinet-collection-api",
+    library: "nbinet-collection-crawler",
     libraryTarget: "umd",
   },
   module: {

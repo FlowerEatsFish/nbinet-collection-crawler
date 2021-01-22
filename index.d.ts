@@ -22,6 +22,6 @@ export type NbinetCollectionFunction = (
   dataType?: DataType,
 ) => Promise<DetailType | DetailType[] | null>;
 
-declare const nbinetCollectionApi: NbinetCollectionFunction;
+declare const nbinetCollectionCrawler: NbinetCollectionFunction;
 
-export default nbinetCollectionApi;
+export default nbinetCollectionCrawler;

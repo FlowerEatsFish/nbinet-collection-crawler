@@ -1,15 +1,15 @@
-# Unofficial National Bibliographic Information Network Collection API
+# Unofficial National Bibliographic Information Network Collection Crawler
 
-[![NPM version](https://img.shields.io/npm/v/@flowereatfish/nbinet-collection-api.svg)](https://www.npmjs.com/package/@flowereatfish/nbinet-collection-api)
-[![Actions status](https://github.com/FlowerEatsFish/nbinet-collection-api/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-api/actions)
-[![Codecov status](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-api/commits)
-[![Dependencies status](https://github.com/FlowerEatsFish/nbinet-collection-api/workflows/dependencies-status/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-api/actions)
+[![NPM version](https://img.shields.io/npm/v/nbinet-collection-crawler.svg)](https://www.npmjs.com/package/nbinet-collection-crawler)
+[![Actions status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
+[![Codecov status](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/commits)
+[![Dependencies status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/workflows/dependencies-status/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
 [![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-非官方全國圖書書目資訊網 API
+全國圖書書目資訊網館藏資料爬蟲
 
-- [Unofficial National Bibliographic Information Network Collection API](#Unofficial-National-Bibliographic-Information-Network-Collection-API)
+- [Unofficial National Bibliographic Information Network Collection Crawler](#Unofficial-National-Bibliographic-Information-Network-Collection-Crawler)
   - [Requirements](#Requirements)
   - [Installations](#Installations)
   - [Usage](#Usage)
@@ -24,20 +24,20 @@
 
 ## Requirements
 
-- This construct uses [Axios.js](https://github.com/axios/axios), so you need to care the Cross-Origin Requests (CORS).
+- This construct uses XHR such as [Axios.js](https://github.com/axios/axios), so you need to care about the Cross-Origin Requests (CORS) if you use this construct in web browsers rather than Node.js.
 
 ## Installations
 
 - NPM
 
 ```shell
-npm install @flowereatfish/nbinet-collection-api --save
+npm install nbinet-collection-crawler --save
 ```
 
 - Yarn
 
 ```shell
-yarn add @flowereatfish/nbinet-collection-api
+yarn add nbinet-collection-crawler
 ```
 
 ## Usage
@@ -45,10 +45,10 @@ yarn add @flowereatfish/nbinet-collection-api
 ### Node.js version 8 or higher (with full Async/Await support)
 
 ```javascript
-const nbinetCollectionApi = require('@flowereatfish/nbinet-collection-api');
+const nbinetCollectionCrawler = require('nbinet-collection-crawler');
 
 const run = async () => {
-  const results = await nbinetCollectionApi('護理學博士教育課程規劃與評值研討會', 'keyword');
+  const results = await nbinetCollectionCrawler('護理學博士教育課程規劃與評值研討會', 'keyword');
   console.log(results);
 };
 
@@ -58,9 +58,9 @@ run();
 ### Others
 
 ```javascript
-const nbinetCollectionApi = require('@flowereatfish/nbinet-collection-api');
+const nbinetCollectionCrawler = require('nbinet-collection-crawler');
 
-nbinetCollectionApi('護理學博士教育課程規劃與評值研討會', 'keyword')
+nbinetCollectionCrawler('護理學博士教育課程規劃與評值研討會', 'keyword')
   .then(results => console.log(results));
 ```
 
@@ -70,8 +70,8 @@ nbinetCollectionApi('護理學博士教育課程規劃與評值研討會', 'keyw
 
 ```shell
 # To download the files and install packages.
-$ git clone https://github.com/FlowerEatsFish/nbinet-collection-api.git
-$ cd nbinet-collection-api
+$ git clone https://github.com/FlowerEatsFish/nbinet-collection-crawler.git
+$ cd nbinet-collection-crawler
 $ yarn install # npm install
 
 # To run a demo.
@@ -136,9 +136,9 @@ null
 ### Input parameters
 
 ```javascript
-import nbinetCollectionApi from '@flowereatfish/nbinet-collection-api';
+import nbinetCollectionCrawler from 'nbinet-collection-crawler';
 
-const result = nbinetCollectionApi(
+const result = nbinetCollectionCrawler(
   keyword,  // string. Necessary.
             // If you set it as null, it will get an error.
   dataType, // string. Default: "keyword". Optional: "keyword", "isbn".
