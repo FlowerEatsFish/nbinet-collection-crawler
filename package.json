@@ -15,20 +15,14 @@
     "lint:fix": "eslint . -f stylish --ext .js --ext .ts --fix",
     "test": "jest --coverage --silent"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FlowerEatsFish/nbinet-collection-api.git"
-  },
+  "repository": "git@github.com:FlowerEatsFish/nbinet-collection-api.git",
+  "author": "Eating-Fish Flower",
+  "license": "MIT",
+  "private": false,
   "keywords": [
     "api",
     "web-crawler"
   ],
-  "author": "Eating-Fish Flower",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/FlowerEatsFish/nbinet-collection-api/issues"
-  },
-  "homepage": "https://github.com/FlowerEatsFish/nbinet-collection-api#readme",
   "dependencies": {
     "axios": "^0.21.1"
   },
