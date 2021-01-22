@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlowerEatFish/nbinet-collection-api.git"
+    "url": "git+https://github.com/FlowerEatsFish/nbinet-collection-api.git"
   },
   "keywords": [
     "api",
@@ -26,9 +26,9 @@
   "author": "Eating-Fish Flower",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FlowerEatFish/nbinet-collection-api/issues"
+    "url": "https://github.com/FlowerEatsFish/nbinet-collection-api/issues"
   },
-  "homepage": "https://github.com/FlowerEatFish/nbinet-collection-api#readme",
+  "homepage": "https://github.com/FlowerEatsFish/nbinet-collection-api#readme",
   "dependencies": {
     "axios": "^0.21.1"
   },

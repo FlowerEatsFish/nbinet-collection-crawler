@@ -1,9 +1,9 @@
 # Unofficial National Bibliographic Information Network Collection API
 
 [![NPM version](https://img.shields.io/npm/v/@flowereatfish/nbinet-collection-api.svg)](https://www.npmjs.com/package/@flowereatfish/nbinet-collection-api)
-[![Actions status](https://github.com/FlowerEatFish/nbinet-collection-api/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatFish/nbinet-collection-api/actions)
-[![Codecov status](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/commits)
-[![Dependencies status](https://github.com/FlowerEatFish/nbinet-collection-api/workflows/dependencies-status/badge.svg?branch=master)](https://github.com/FlowerEatFish/nbinet-collection-api/actions)
+[![Actions status](https://github.com/FlowerEatsFish/nbinet-collection-api/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-api/actions)
+[![Codecov status](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-api/commits)
+[![Dependencies status](https://github.com/FlowerEatsFish/nbinet-collection-api/workflows/dependencies-status/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-api/actions)
 [![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -70,7 +70,7 @@ nbinetCollectionApi('護理學博士教育課程規劃與評值研討會', 'keyw
 
 ```shell
 # To download the files and install packages.
-$ git clone https://github.com/FlowerEatFish/nbinet-collection-api.git
+$ git clone https://github.com/FlowerEatsFish/nbinet-collection-api.git
 $ cd nbinet-collection-api
 $ yarn install # npm install
 
