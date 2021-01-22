@@ -1,10 +1,9 @@
 # Unofficial National Bibliographic Information Network Collection API
 
 [![NPM version](https://img.shields.io/npm/v/@flowereatfish/nbinet-collection-api.svg)](https://www.npmjs.com/package/@flowereatfish/nbinet-collection-api)
-[![Travis-CI status](https://travis-ci.com/FlowerEatFish/nbinet-collection-api.svg?branch=master)](https://travis-ci.com/FlowerEatFish/nbinet-collection-api/builds)
-[![AppVeyor status](https://ci.appveyor.com/api/projects/status/9h1kkwly756i4hf3/branch/master?svg=true)](https://ci.appveyor.com/project/FlowerEatFish/nbinet-collection-api/history)
+[![Actions status](https://github.com/FlowerEatFish/nbinet-collection-api/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatFish/nbinet-collection-api/actions)
 [![Codecov status](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatFish/nbinet-collection-api/commits)
-[![Dependencies status](https://david-dm.org/FlowerEatFish/nbinet-collection-api/status.svg)](https://david-dm.org/FlowerEatFish/nbinet-collection-api)
+[![Dependencies status](https://github.com/FlowerEatFish/nbinet-collection-api/workflows/dependencies-status/badge.svg?branch=master)](https://github.com/FlowerEatFish/nbinet-collection-api/actions)
 [![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
