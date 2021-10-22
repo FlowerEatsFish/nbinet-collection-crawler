@@ -48,7 +48,7 @@ const setUrl = (keyword: string, dataType: DataType): string => {
 
 const fetchFullHtmlCode = async (url: string): Promise<string | null> => {
   try {
-    const response = await axios.get(url);
+    const response = await axios.get<string>(url);
 
     return removeLeftoverCode(response.data);
   } catch (error) {
