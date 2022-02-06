@@ -1,6 +1,6 @@
 {
   "name": "nbinet-collection-crawler",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Unofficial National Bibliographic Information Network collection crawler",
   "main": "index.js",
   "typings": "index.d.ts",
