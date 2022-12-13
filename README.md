@@ -3,25 +3,25 @@
 [![NPM version](https://img.shields.io/npm/v/nbinet-collection-crawler.svg)](https://www.npmjs.com/package/nbinet-collection-crawler)
 [![Actions status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
 [![Codecov status](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/commits)
-[![Scheduled status](https://travis-ci.com/FlowerEatsFish/nbinet-collection-crawler.svg?branch=master)](https://travis-ci.com/FlowerEatsFish/nbinet-collection-crawler/builds)
+[![Scheduled Status](https://app.travis-ci.com/FlowerEatsFish/nbinet-collection-crawler.svg?branch=master)](https://app.travis-ci.com/github/FlowerEatsFish/nbinet-collection-crawler/builds)
 [![Dependencies status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/workflows/dependencies-status/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
 [![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 全國圖書書目資訊網館藏資料爬蟲
 
-- [Unofficial National Bibliographic Information Network Collection Crawler](#Unofficial-National-Bibliographic-Information-Network-Collection-Crawler)
-  - [Requirements](#Requirements)
-  - [Installations](#Installations)
-  - [Usage](#Usage)
-    - [Node.js version 8 or higher (with full Async/Await support)](#Nodejs-version-8-or-higher-with-full-AsyncAwait-support)
-    - [Others](#Others)
-  - [Demo](#Demo)
-    - [Commands](#Commands)
-    - [Results](#Results)
-  - [API documentation](#API-documentation)
-    - [Input parameters](#Input-parameters)
-    - [Output results](#Output-results)
+- [Unofficial National Bibliographic Information Network Collection Crawler](#unofficial-national-bibliographic-information-network-collection-crawler)
+  - [Requirements](#requirements)
+  - [Installations](#installations)
+  - [Usage](#usage)
+    - [Node.js version 8 or higher (with full Async/Await support)](#nodejs-version-8-or-higher-with-full-asyncawait-support)
+    - [Others](#others)
+  - [Demo](#demo)
+    - [Commands](#commands)
+    - [Results](#results)
+  - [API documentation](#api-documentation)
+    - [Input parameters](#input-parameters)
+    - [Output results](#output-results)
 
 ## Requirements
 
