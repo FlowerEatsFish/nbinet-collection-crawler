@@ -30,6 +30,9 @@ jobs:
       - run: yarn run build:dev
       - run: yarn run build:prod
       - run: yarn test
+      - name: Reset Node.js options
+        if: matrix.node-version == '18'
+        run: echo "NODE_OPTIONS=" >> $GITHUB_ENV
       - name: Codecov
         uses: codecov/codecov-action@v3
   slack:
