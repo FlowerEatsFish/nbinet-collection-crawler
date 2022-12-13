@@ -1,7 +1,9 @@
 language: node_js
 
 node_js:
-  - 12
+  - 14
+  - 16
+  - 18
 
 os:
   - linux
@@ -9,6 +11,7 @@ os:
 branches:
   only:
     - master
+    - develop
 
 notifications:
   email: false
