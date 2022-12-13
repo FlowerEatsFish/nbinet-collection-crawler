@@ -20,6 +20,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Override Node.js options for the specific version
+        if: matrix.node-version == '18'
+        run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
       - run: yarn global add codecov
       - run: yarn install
       - run: yarn run lint
