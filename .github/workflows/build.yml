@@ -12,14 +12,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        node-version: [12, 14, 16]
+        os: [ubuntu-22.04]
+        node-version: [14, 16, 18]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Override Node.js options for the specific version
+        if: matrix.node-version == '18'
+        run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
       - run: yarn global add codecov
       - run: yarn install
       - run: yarn run lint
@@ -27,12 +30,15 @@ jobs:
       - run: yarn run build:dev
       - run: yarn run build:prod
       - run: yarn test
+      - name: Reset Node.js options
+        if: matrix.node-version == '18'
+        run: echo "NODE_OPTIONS=" >> $GITHUB_ENV
       - name: Codecov
-        uses: codecov/codecov-action@v1.0.12
+        uses: codecov/codecov-action@v3
   slack:
     name: Slack Notification
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     if: always()
     steps:
       - uses: 8398a7/action-slack@v3
