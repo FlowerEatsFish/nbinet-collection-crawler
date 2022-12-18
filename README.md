@@ -4,7 +4,6 @@
 [![Actions status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
 [![Codecov status](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/commits)
 [![Scheduled Status](https://app.travis-ci.com/FlowerEatsFish/nbinet-collection-crawler.svg?branch=master)](https://app.travis-ci.com/github/FlowerEatsFish/nbinet-collection-crawler/builds)
-[![Dependencies status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/workflows/dependencies-status/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
 [![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
