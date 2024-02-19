@@ -1,6 +1,7 @@
 # directories
 .github/
 coverage/
+src/
 test/
 
 # hidden configs
@@ -11,7 +12,7 @@ test/
 .prettierrc
 
 # configs
-appveyor.yml
+babel.config.js
 jest.config.js
 tsconfig.json
 yarn-error.log
