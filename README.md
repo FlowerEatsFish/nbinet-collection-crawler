@@ -3,30 +3,22 @@
 [![NPM version](https://img.shields.io/npm/v/nbinet-collection-crawler.svg)](https://www.npmjs.com/package/nbinet-collection-crawler)
 [![Actions status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
 [![Codecov status](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/commits)
-[![Scheduled Status](https://app.travis-ci.com/FlowerEatsFish/nbinet-collection-crawler.svg?branch=master)](https://app.travis-ci.com/github/FlowerEatsFish/nbinet-collection-crawler/builds)
 [![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 全國圖書書目資訊網館藏資料爬蟲
 
 - [Unofficial National Bibliographic Information Network Collection Crawler](#unofficial-national-bibliographic-information-network-collection-crawler)
-  - [Requirements](#requirements)
-  - [Installations](#installations)
+  - [Installation](#installation)
   - [Usage](#usage)
-    - [Node.js version 8 or higher (with full Async/Await support)](#nodejs-version-8-or-higher-with-full-asyncawait-support)
-    - [Others](#others)
   - [Demo](#demo)
     - [Commands](#commands)
     - [Results](#results)
-  - [API documentation](#api-documentation)
+  - [Documentation](#documentation)
     - [Input parameters](#input-parameters)
     - [Output results](#output-results)
 
-## Requirements
-
-- This construct uses XHR such as [Axios.js](https://github.com/axios/axios), so you need to care about the Cross-Origin Requests (CORS) if you use this construct in web browsers rather than Node.js.
-
-## Installations
+## Installation
 
 - NPM
 
@@ -42,8 +34,6 @@ yarn add nbinet-collection-crawler
 
 ## Usage
 
-### Node.js version 8 or higher (with full Async/Await support)
-
 ```javascript
 const nbinetCollectionCrawler = require('nbinet-collection-crawler');
 
@@ -53,15 +43,6 @@ const run = async () => {
 };
 
 run();
-```
-
-### Others
-
-```javascript
-const nbinetCollectionCrawler = require('nbinet-collection-crawler');
-
-nbinetCollectionCrawler('護理學博士教育課程規劃與評值研討會', 'keyword')
-  .then(results => console.log(results));
 ```
 
 ## Demo
@@ -131,7 +112,7 @@ $ yarn start # npm start
 null
 ```
 
-## API documentation
+## Documentation
 
 ### Input parameters
 

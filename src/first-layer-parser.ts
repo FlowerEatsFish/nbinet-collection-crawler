@@ -43,18 +43,16 @@ const getLibrary = (htmlCode: string): string[] | null => {
 };
 
 const setCollectData = (htmlCodeList: string[]): CollectDataType[] => {
-  const result = htmlCodeList.map(
-    (value): CollectDataType => {
-      if (value.includes('class="browseEntry"')) {
-        return { dataType: "url", value: getUrl(value) };
-      }
-      if (value.includes('class="browseSubEntry"')) {
-        return { dataType: "library", value: getLibrary(value) };
-      }
+  const result = htmlCodeList.map((value): CollectDataType => {
+    if (value.includes('class="browseEntry"')) {
+      return { dataType: "url", value: getUrl(value) };
+    }
+    if (value.includes('class="browseSubEntry"')) {
+      return { dataType: "library", value: getLibrary(value) };
+    }
 
-      return { dataType: "none", value: null };
-    },
-  );
+    return { dataType: "none", value: null };
+  });
 
   return result;
 };

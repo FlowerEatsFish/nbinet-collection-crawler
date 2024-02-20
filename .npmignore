@@ -1,6 +1,7 @@
 # directories
 .github/
 coverage/
+src/
 test/
 
 # hidden configs
@@ -9,11 +10,9 @@ test/
 .eslintrc
 .gitignore
 .prettierrc
-.travis.yml
 
 # configs
-appveyor.yml
+babel.config.js
 jest.config.js
 tsconfig.json
-webpack.config.js
 yarn-error.log
