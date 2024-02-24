@@ -1,9 +1,9 @@
 # Unofficial National Bibliographic Information Network Collection Crawler
 
 [![NPM version](https://img.shields.io/npm/v/nbinet-collection-crawler.svg)](https://www.npmjs.com/package/nbinet-collection-crawler)
-[![Actions status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/workflows/build/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
+[![Actions status](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/FlowerEatsFish/nbinet-collection-crawler/actions)
 [![Codecov status](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/branch/master/graph/badge.svg)](https://codecov.io/gh/FlowerEatsFish/nbinet-collection-crawler/commits)
-[![Code style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
+[![Code style](https://img.shields.io/badge/code_style-biome-blue.svg)](https://biomejs.dev/)
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 全國圖書書目資訊網館藏資料爬蟲
