@@ -3,8 +3,8 @@
  */
 
 import { DataType, DetailType, NbinetCollectionFunction } from "../index";
-import { firstLayerParser, FirstLayerDataType } from "./first-layer-parser";
-import { collectionFetch, FetchResult } from "./nbinet-fetch";
+import { FirstLayerDataType, firstLayerParser } from "./first-layer-parser";
+import { FetchResult, collectionFetch } from "./nbinet-fetch";
 import { SecondLayerDataType, secondLayerParser } from "./second-layer-parser";
 import { thirdLayerParser } from "./third-layer-parser";
 

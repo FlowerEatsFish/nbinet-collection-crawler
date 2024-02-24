@@ -62,7 +62,7 @@ const setUrlFollowParameter = (url: string | null, keyword: string, dataType: Da
 
 export const collectionFetch = async (
   url: string | null,
-  keyword: string = "",
+  keyword = "",
   dataType: DataType = "keyword",
 ): Promise<FetchResult> => {
   const fullUrl = setUrlFollowParameter(url, keyword, dataType);
